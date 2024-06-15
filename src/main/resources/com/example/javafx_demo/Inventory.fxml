@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="493.0" prefWidth="653.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx_demo.Inventory">
+   <children>
+      <TitledPane animated="false" layoutX="34.0" layoutY="67.0" prefHeight="371.0" prefWidth="585.0" style="-fx-background-color: #383838; -fx-border-color: #4CAF50; -fx-border-width: 2px; -fx-border-radius: 10px; -fx-text-fill: white; -fx-font-size: 18px;">
+         <content>
+            <TableView fx:id="tableView" prefHeight="340.0" prefWidth="580.0" style="-fx-background-color: transparent;">
+               <columns>
+                  <TableColumn fx:id="noColumn" text="Product" style="-fx-text-fill: white;" />
+                  <TableColumn fx:id="productIdColumn" text="Supplier" style="-fx-text-fill: white;" />
+                  <TableColumn fx:id="productNameColumn" text="Qty IN" style="-fx-text-fill: white;" />
+                  <TableColumn fx:id="supplierColumn" text="Qty OUT" style="-fx-text-fill: white;" />
+                  <TableColumn fx:id="priceColumn" text="Price" style="-fx-text-fill: white;" />
+                  <TableColumn fx:id="amountColumn" prefWidth="183.0" text="Notes" style="-fx-text-fill: white;" />
+               </columns>
+            </TableView>
+         </content>
+      </TitledPane>
+      <Text layoutX="34.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Inventory List">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

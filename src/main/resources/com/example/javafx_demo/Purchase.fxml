@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<SplitPane style="-fx-padding: 20px; -fx-background-color: #f9f9f9;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javafx_demo.Purchase">
+    <items>
+        <VBox fx:id="mainVBox" style="-fx-spacing: 20px;">
+            <children>
+                <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-alignment: center;" text="Purchase Order" VBox.vgrow="NEVER" />
+
+                <GridPane hgap="10" style="-fx-background-color: #ffffff; -fx-padding: 20px; -fx-border-radius: 10px; -fx-border-color: #b0bec5; -fx-border-width: 2px;" vgap="10">
+                    <columnConstraints>
+                        <ColumnConstraints percentWidth="25" />
+                        <ColumnConstraints percentWidth="30" />
+                        <ColumnConstraints percentWidth="20" />
+                        <ColumnConstraints percentWidth="25" />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints minHeight="30" />
+                        <RowConstraints minHeight="30" />
+                        <RowConstraints minHeight="30" />
+                        <RowConstraints minHeight="30" />
+                        <RowConstraints minHeight="30" />
+                        <RowConstraints minHeight="30" />
+                        <RowConstraints minHeight="30" />
+                    </rowConstraints>
+                    <children>
+                        <!-- Header -->
+                        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Header" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <Label text="Order No." GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                        <TextField fx:id="orderNoField" promptText="Enter order number" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                        <Label text="Supplier Name" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="supplierNameField" maxWidth="-Infinity" prefHeight="25.0" prefWidth="164.0" promptText="Enter supplier name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                        <Label text="Address" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="addressField" promptText="Enter address" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <DatePicker fx:id="dateField" promptText="Enter date" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+
+                        <Label text="Telephone" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <TextField fx:id="telpField" promptText="Enter phone number" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+
+                        <!-- Detail -->
+                        <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Detail" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <Label text="Product" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <TextField fx:id="productField" promptText="Click button for product name" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <Button text="..." style="-fx-background-color: #2196F3; -fx-text-fill: white;" onAction="#handleShowProductList" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+
+                        <Label text="Quantity" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <TextField fx:id="quantityField" promptText="Enter quantity" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+                        <Label text="Price" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                        <TextField fx:id="priceField" promptText="Enter price" GridPane.columnIndex="3" GridPane.rowIndex="5" />
+
+                        <Button text="Enter List" style="-fx-background-color: #4CAF50; -fx-text-fill: white;" onAction="#handleEnterList" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+
+                        <Button fx:id="picksupply" alignment="CENTER_RIGHT" contentDisplay="RIGHT" onAction="#handleShowSupplierList" text="..." textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                            <GridPane.margin>
+                                <Insets right="5.0" />
+                            </GridPane.margin>
+                        </Button>
+                    </children>
+                </GridPane>
+
+                <TableView fx:id="tableView" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="noColumn" text="NO" />
+                        <TableColumn fx:id="productIdColumn" text="Product ID" />
+                        <TableColumn fx:id="productNameColumn" prefWidth="109.0" text="Product Name" />
+                        <TableColumn fx:id="supplierColumn" text="Supplier" />
+                        <TableColumn fx:id="quantityColumn" prefWidth="81.0" text="Qty" />
+                        <TableColumn fx:id="priceColumn" prefWidth="111.0" text="Price" />
+                        <TableColumn fx:id="amountColumn" prefWidth="174.0" text="Amount" />
+                    </columns>
+                </TableView>
+
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <padding>
+                        <Insets bottom="10" left="10" right="10" top="10" />
+                    </padding>
+                    <Button style="-fx-background-color: #4CAF50; -fx-text-fill: white;" text="New Data" HBox.hgrow="ALWAYS" />
+                    <Button style="-fx-background-color: #008CBA; -fx-text-fill: white;" text="Update" HBox.hgrow="ALWAYS" />
+                    <Button style="-fx-background-color: #f44336; -fx-text-fill: white;" text="Cancel" HBox.hgrow="ALWAYS" />
+                </HBox>
+            </children>
+        </VBox>
+    </items>
+</SplitPane>

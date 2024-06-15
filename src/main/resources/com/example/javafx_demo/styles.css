@@ -1,0 +1,31 @@
+/* styles.css */
+.root {
+    -fx-background-color: #E0E0E0;
+    -fx-font-family: 'Segoe UI', sans-serif;
+}
+
+.label {
+    -fx-text-fill: #333333;
+}
+
+.button {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+}
+
+.text-field {
+    -fx-background-color: #F5F5F5;
+    -fx-border-color: #315ceb;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+}
+
+.pane {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #E0E0E0;
+    -fx-border-width: 2;
+}
